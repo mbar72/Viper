@@ -2,14 +2,20 @@
 
 ## 配置要求
 
-+ 最低配置需要2U4G
-+ 支持的OS版本
-    - Ubuntu22.04及以上版本
-    - 不建议使用centos
++ 2G空闲内存
++ 5G硬盘空间
++ Linux内核5.X以上(Ubuntu 22.04/kali Linux 2024.4/Debian 11)
+
+## 自动安装 (推荐)
+
+```shell
+bash <(curl -fsSL https://viperrtp.com/install_zh.sh)
+```
+
+> 通过[使用 VIPER](./try_viper) 熟悉Viper的相关功能
 
 ## 手动安装
 
-+ **准备一台linux系统的VPS**
 + **切换到root用户**
 
 ```shell
@@ -53,11 +59,9 @@ sysctl -w vm.max_map_count=262144
 + **安装 docker**
 
 ```shell
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-service docker start
+export DOWNLOAD_URL="https://mirrors.tuna.tsinghua.edu.cn/docker-ce"
+curl -fsSL https://viperrtp.com/docker.sh | bash -s docker
 ```
-
-> 国内VPS安装Docker参考如下文档 [国内安装Docker](./install_docker_in_china)
 
 + **设置/生成/进入安装目录**
 
@@ -94,7 +98,8 @@ services:
 EOF
 ```
 
-> 国外VPS也可以将registry.cn-shenzhen.aliyuncs.com/toys/viper:latest替换成registry.cn-hongkong.aliyuncs.com/toys/viper:latest
+> 国外VPS也可以将registry.cn-shenzhen.aliyuncs.com/toys/viper:latest替换成registry.cn-hongkong.aliyuncs.com/toys/viper:
+> latest
 
 + **设置登录密码**
 
@@ -121,11 +126,11 @@ docker compose up -d
 + 等待15s系统启动,访问 [https://yourvpsip:60000](https://vpsip:60000/#/user/login) 登录. 用户名:root 密码:自定义密码
 
 > 所有的docker compose命令必须在安装目录执行才会有效果
-
+>
 > 使用VPS部署Viper,请确认VPS的防火墙开放了60000端口及后续监听需要的端口
-
-> 在红队中使用VIPER,建议配置 [反溯源](./avoid_tracing)
-
-> 可通过[开始使用](./try_viper) 熟悉Viper的相关功能
-
+>
+> 配置[反溯源](./avoid_tracing),避免被威胁情报平台标记
+>
+> 通过[使用 VIPER](./try_viper) 熟悉Viper的相关功能
+>
 > Mac安装参考 [issues](issues)

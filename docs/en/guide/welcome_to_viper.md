@@ -1,71 +1,60 @@
 # Welcome to VIPER
 
-Where Red Teaming Builds Cyber Resilience.
-
-As a community-vetted cybersecurity platform, VIPER unifies threat modeling, adversary simulation and red team operations into one collaborative workspace. Conduct
-full-spectrum security stress tests with 90% less tool fragmentation, enabling red/blue teams to validate defenses 3x faster. Trusted by leading enterprises worldwide to transform
-red
-team insights into actionable defense strategies - because true security starts with seeing through the attacker's lens.
+**VIPER** is a powerful and flexible red team platform that integrates essential tools and functionalities for adversary simulation and red team operations. With numerous built-in
+modules covering all phases and deep AI integration with red team tools, VIPER helps you efficiently complete cybersecurity assessments.
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-Try it? Jump to [Quick Start](./getting_start).
+🚀 Ready to dive in? [5-minute quick start](./getting_start)
 
 </div>
 
-## Why VIPER?
+## Why Choose VIPER?
 
-- **Easy-to-use operation interface**
+- 📊 **Streamlined Interface**
 
-  Provides an easy-to-learn user interface, allowing red team members to quickly start their security assessment tasks.
+  Get started quickly and conduct security assessments without complex configurations.
 
-- **Multi-platform support**
+- 💻 **Comprehensive Multi-Platform Support**
 
-  Supports red team assessment for multiple operating systems, including Windows, Linux, and macOS.
+  Seamlessly supports Windows, Linux, and macOS to accommodate various penetration testing scenarios.
 
-- **Out-of-the-box red team tools**
+- 🧠 **AI-Powered Assistance**
 
-  The functional design covers all stages of the MITRE ATT&CK framework and provides users with a comprehensive attack simulation solution.
+  Built-in Large Language Model (LLM) Agents provide intelligent decision support, significantly boosting productivity.
 
-- **Integrated LLM Agent**
+- 🛠️ **Rich Module Library**
 
-  Built-in large language model intelligent agent to enhance automated processing capabilities and intelligent decision support.
+  Includes 100+ post-exploitation modules covering all MITRE ATT&CK framework phases, from initial access to lateral movement.
 
-- **Automated workflow**
+- ⚙️ **Powerful Automation Capabilities**
 
-  Supports automated orchestration and notification mechanisms, enabling red teams to monitor target status around the clock.
+  Supports automated orchestration and notification mechanisms, reducing repetitive tasks so you can focus on creative penetration testing.
 
-- **Diverse modules**
+- 🔌 **Flexible Extensibility**
 
-  Integrates multiple types including post-penetration modules, passive scanning modules, and whole-network scanning modules to meet the needs in different scenarios.
+  Create custom modules using Python to easily meet specific requirements or add extra functionality.
 
-- **Custom extension ability**
+- 🛡️ **Professional Protection Mechanisms**
 
-  Supports writing custom modules in Python to meet specific needs or add additional functions.
+  Built-in anti-tracing, connection filtering, defense evasion, and multi-level proxy capabilities ensure operational security.
 
-- **Attack surface management (Beta)**
+## Comparison with Similar Tools
 
-  Introduces attack surface management functions to help teams better identify and understand potential risk points of target enterprises.
+| Features                 | VIPER                       | Cobalt Strike         | NightHawk             | BruteRatel           |
+|--------------------------|-----------------------------|-----------------------|-----------------------|----------------------|
+| Implants                 | Windows<br/>Linux<br/>MacOS | Windows               | Windows               | Windows              |
+| Visual UI                | ✅                           | ✅                     | ✅                     | ✅                    |
+| Multi-level Control      | ✅                           | ✅                     | ✅                     | ✅                    |
+| Custom Plugins           | Python                      | CNA                   | ❌                     | ❌                    |
+| Built-in AV Evasion      | ✅                           | ❌                     | ✅                     | ✅                    |
+| Automated Orchestration  | ✅                           | ❌                     | ✅                     | ❌                    |
+| Multi-user Collaboration | ✅                           | ✅                     | ❌                     | ❌                    |
+| LLM Agent                | ✅                           | ❌                     | ❌                     | ❌                    |
+| Price                    | Free                        | $12,600 per user/year | $10,000 per user/year | $3,000 per user/year |
 
-## Product Comparison
+## Start Your VIPER Journey Now
 
-|                        | VIPER                       | Cobalt Strike     | NightHawk         | BruteRatel       |
-|------------------------|-----------------------------|-------------------|-------------------|------------------|
-| Multi-platform Support | Windows<br/>Linux<br/>MacOS | Windows           | Windows           | Windows          |
-| Visual UI              | ✅                           | ✅                 | ✅                 | ✅                |
-| Pivot Graph            | ✅                           | ✅                 | ✅                 | ✅                |
-| Custom Plugin          | Python                      | CNA               | ❌                 | ❌                |
-| Built-in Evasion       | ✅                           | ❌                 | ✅                 | ✅                |
-| Automation             | ✅                           | ❌                 | ✅                 | ❌                |
-| Team Collaboration     | ✅                           | ✅                 | ❌                 | ❌                |
-| LLM Agent              | ✅                           | ❌                 | ❌                 | ❌                |
-| Price                  | Free*                       | $12,600 user/year | $10,000 user/year | $3,000 user/year |
-
-<small>\* Community edition is free to use</small>
-
-## Next steps
-
-+ Read [Quick Start](getting_start.md) to install and experience VIPER
-+ Browse VIPER functions quickly through [Screenshots](screenshots.md)
-+ Adversary simulation with VIPER by referring to [Blog](../blog/index)
-+ Unlock more premium features by [subscribing](../pricing)
++ 📚 [Quick Start](getting_start.md) - Deploy and experience VIPER in 5 minutes
++ 🎓 [Practical Tutorials](../training/index) - Master advanced VIPER techniques
++ 💼 [View Pricing](../pricing) - Understand the differences between Community and Professional editions

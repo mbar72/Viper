@@ -1,7 +1,6 @@
-# Obtain the List of.Net Framework Versions
+# Get .Net Framework Version List
 
-# Main Function
-This module checks the versions of.Net Framework installed on the host.
+The module checks the installed .Net framework versions on the host.
 
-# Operation Method
+## Operation Method
 ![](img\Discovery_QueryRegistry_GetDotNetVersions\1.webp)

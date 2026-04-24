@@ -1,21 +1,17 @@
-import {createRequire} from 'module'
 import {type DefaultTheme, defineConfig} from 'vitepress'
 
-const require = createRequire(import.meta.url)
-const pkg = require('vitepress/package.json')
 
 export const en = defineConfig({
     lang: 'en-US',
-    description: 'A Powerful And Flexible Red Team Platform.',
+    description: 'The AI Red Team Platform.',
 
     themeConfig: {
         nav: nav(),
 
         sidebar: {
             '/guide/': {base: '/guide/', items: sidebarGuide()},
-            '/module/': {base: '/module/', items: sidebarReference()},
+            '/module/': {base: '/module/', items: sidebarModule()},
             '/training/': {base: '/training/', items: sidebarTraining()},
-            '/blog/': {base: '/blog/', items: sidebarBlog()},
             '/policies/': {base: '/policies/', items: sidebarPolicies()}
         },
 
@@ -34,33 +30,68 @@ export const en = defineConfig({
 function nav(): DefaultTheme.NavItem[] {
     return [
         {
-            text: 'Guide',
+            text: 'GUIDE',
             link: '/guide/welcome_to_viper',
             activeMatch: '/guide/'
         },
         {
-            text: 'Module',
+            text: 'MODULE',
             link: '/module/index',
             activeMatch: '/module/'
         },
         {
-            text: 'Training',
+            text: 'TRAINING',
             link: '/training/index',
             activeMatch: '/training/'
         },
+        // {
+        //     text: 'PRICING',
+        //     link: '/pricing',
+        //     activeMatch: '/pricing'
+        // },
         {
-            text: 'Blog',
-            link: '/blog/index',
-            activeMatch: '/blog/'
-        },
-        {
-            text: 'Pricing',
-            link: '/pricing',
-            activeMatch: '/pricing'
-        },
-        {
-            text: "Changelog",
+            text: "CHANGELOG",
             items: [
+                {
+                    text: '3.1.11 - Skill is all you need',
+                    link: '/release/3_1_11_Skill_Is_All_You_Need/'
+                },
+                {
+                    text: '3.1.10 - Happy New Year',
+                    link: '/release/3_1_10_Happy_New_Year/'
+                },
+                {
+                    text: '3.1.9 - Let`s Summarize',
+                    link: '/release/3_1_9_Lets_Summarize/'
+                },
+                {
+                    text: '3.1.8 - New Start To Fly',
+                    link: '/release/3_1_8_New_Start_To_Fly'
+                },
+                {
+                    text: '3.1.7 - Python Is All Your Need',
+                    link: '/release/3_1_7_Python_Is_All_Your_Need'
+                },
+                {
+                    text: '3.1.6 - Awareness Training Agent and Analysis Agent',
+                    link: '/release/3_1_6_Awareness_Training_Agent_And_Analysis_Agent'
+                },
+                {
+                    text: '3.1.5 - GitHub Issues Week',
+                    link: '/release/3_1_5_Github_issues_week'
+                },
+                {
+                    text: '3.1.4 - Happy International Workers\' Day',
+                    link: '/release/3_1_4_happy_international_workers_day'
+                },
+                {
+                    text: '3.1.3 - It\'s Not a Bug, It\'s a Feature !',
+                    link: '/release/3_1_3_It_is_not_a_bug_it_is_a_feature'
+                },
+                {
+                    text: '3.1.2 - Pentest Agent and MCP Server',
+                    link: '/release/3_1_2_Pentest_Agent_and_MCP_server'
+                },
                 {
                     text: '3.1.1 - Chaos is a Ladder',
                     link: '/release/3_1_1_Chaos_is_a_ladder'
@@ -79,8 +110,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             items: [
                 {text: 'Welcome to Viper', link: 'welcome_to_viper'},
                 {text: 'Getting Start', link: 'getting_start'},
-                {text: 'Login', link: 'login'},
-                {text: 'Screenshots', link: 'screenshots'},
+
             ]
         },
         {
@@ -88,7 +118,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 {text: 'Information', link: 'information'},
-                {text: 'PortService', link: 'portservice'},
+                {text: 'Port Service', link: 'portservice'},
                 {text: 'Vulnerability', link: 'vulnerability'},
                 {text: 'Delete', link: 'delete'},
                 {text: '', link: ''},
@@ -101,9 +131,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
                 {text: 'Session', link: 'session'},
                 {text: 'Explorer', link: 'explorer'},
                 {text: 'Routing', link: 'route'},
-                {text: 'Console', link: 'console'},
                 {text: 'PortFwd', link: 'portfwd'},
                 {text: 'Transport', link: 'transport'},
+                {text: 'Console', link: 'console'},
                 {text: 'Dashboard', link: 'dashboard'},
                 {text: 'Terminate', link: 'terminate'},
                 {text: '', link: ''},
@@ -113,6 +143,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             text: 'Platform Features',
             collapsed: false,
             items: [
+                {text: 'Login', link: 'login'},
                 {text: 'Host&Session', link: 'host_and_session_list'},
                 {text: 'RunModule', link: 'run_module'},
                 {text: 'Realtime', link: 'realtime'},
@@ -125,7 +156,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
                 {text: 'Route&Proxy', link: 'routeproxy'},
                 {text: 'Credential', link: 'credential'},
                 {text: 'Automation', link: 'automation'},
-                {text: 'Msfconsole', link: 'msfconsole'},
+                {text: 'AI Agent', link: 'ai_agent'},
+                {text: 'MsfConsole', link: 'msfconsole'},
                 // {text: 'Network Scanning', link: 'internet_scan'},
                 // {text: 'Passive Scanning', link: 'passive_scan'},
                 {text: '', link: ''},
@@ -139,16 +171,20 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
                 {text: 'User Management', link: 'user_management'},
                 {text: 'General Config', link: 'common_config'},
                 {text: 'OPENAI API', link: 'openai_api'},
+                {text: 'Langsmith', link: 'langsmith_config'},
+                {text: 'Proxy Config', link: 'proxy_config'},
                 {text: 'SMTP Config', link: 'smtp_config'},
-                {text: 'DingDing Bot', link: 'dingding_bot'},
-                {text: 'ServerChan Bot', link: 'server_bot'},
                 {text: 'Telegram Bot', link: 'telegram_bot'},
+                {text: 'Bark Bot', link: 'bark_bot'},
+                {text: 'ServerChan Bot', link: 'server_bot'},
+                {text: 'DingDing Bot', link: 'dingding_bot'},
+                {text: 'About Viper', link: 'about_viper'},
+                {text: 'MCP Server', link: 'mcpserver'},
                 // {text: 'Aiqicha API', link: 'aiqicha_api'},
                 // {text: 'FOFA API', link: 'fofa_api'},
                 // {text: 'Hunter API', link: 'hunter_api'},
                 // {text: 'Quake API', link: 'quake_api'},
                 // {text: 'Zoomeye API', link: 'zoomeye_api'},
-                {text: 'About Viper', link: 'about_viper'},
                 {text: '', link: ''},
             ]
         },
@@ -159,9 +195,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
                 {text: 'Update Version', link: 'update_version'},
                 {text: 'Shutdown Restart', link: 'shutdown_restart'},
                 {text: 'Change Password', link: 'change_password'},
-                {text: 'OS Optimization', link: 'os_optimization'},
                 {text: 'Installation Directory', link: 'installation_directory_introduction'},
-                {text: 'Open Source Software', link: 'open_source_software'},
+                {text: 'Avoid Tracing', link: 'avoid_tracing'},
                 {text: 'Known Issues', link: 'issues'},
                 {text: '', link: ''},
             ]
@@ -169,8 +204,19 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
     ]
 }
 
-function sidebarReference(): DefaultTheme.SidebarItem[] {
+function sidebarModule(): DefaultTheme.SidebarItem[] {
     return [
+        {
+            text: 'AI Agent',
+            collapsed: false,
+            items: [
+                {text: 'Pentest Agent', link: 'AI_Agent_Session_LangGraph_Pentest'},
+                {text: 'Phishing Agent', link: 'AI_Agent_Phishing_LangGraph_Mail'},
+                {text: 'Intelligence Analysis Agent', link: 'AI_Agent_Session_LangGraph_Analysis'},
+                // {text: 'Reconnaissance Agent', link: 'AI_Agent_Session_LangGraph_Discovery'},
+                //{text: 'Viper Operations Agent', link: 'AI_Agent_Session_LangGraph_ViperOperation'},
+            ]
+        },
         {
             text: 'Resource Deployment',
             collapsed: false,
@@ -179,7 +225,7 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
                 {text: 'DNSLOG Server', link: 'ResourceDevelopment_Server_DNSLog'},
                 {text: 'LDAP Server', link: 'ResourceDevelopment_Server_LDAPServer'},
                 {text: 'TCPLOG Server', link: 'ResourceDevelopment_Server_TCPLogServer'},
-                {text: 'C2 via Tencent API Gateway', link: 'ResourceDevelopment_WebServices_TencentAPIGateway'},
+                {text: 'C2 via Tencent API Gateway', link: 'ResourceDevelopment_WebServices_APIGateway'},
             ]
         },
         {
@@ -195,6 +241,9 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 {text: 'Upload & Execute Executable', link: 'Execution_CommandAndScriptingInterpreter_UploadAndExec'},
+                {text: 'Deploy Kit Suite to Linux Host', link: 'Execution_CommandAndScriptingInterpreter_DeployKit'},
+                {text: 'Deploy Kit Suite to Windows Host', link: 'Execution_CommandAndScriptingInterpreter_DeployKitWindows'},
+                {text: 'Execution Python script (Kit)', link: 'Execution_CommandAndScriptingInterpreter_RunPythonScriptByKit'},
                 {text: 'AV Bypass via CreateThreadpoolWait', link: 'Execution_UserExecution_CallbackCreateThreadpoolWait'},
                 {text: 'AV Bypass via CreateTimerQueue', link: 'Execution_UserExecution_CallbackCreateTimerQueue'},
                 {text: 'AV Bypass via EnumChildWindows', link: 'Execution_UserExecution_CallbackEnumChildWindows'},
@@ -283,12 +332,15 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
                 {text: 'Retrieve SMS/Call History/Contacts', link: 'Discovery_Microphone_CallInfo'},
                 {text: 'Mobile Camera Capture', link: 'Discovery_Microphone_Camera'},
                 {text: 'Mobile Audio Recording', link: 'Discovery_Microphone_Record_Mic'},
+                {text: 'Windows Host Information Collection (Kit)', link: 'Discovery_Multi_LocalWindowsInfoCollect'},
                 {text: 'Internal ARP Scan', link: 'Discovery_NetworkServiceScanning_ARPScan'},
                 {text: 'Netbios & SMB Scan', link: 'Discovery_NetworkServiceScanning_NbtScanByPython'},
                 {text: 'Async Netbios Scan', link: 'Discovery_NetworkServiceScanning_NextnetByPE'},
                 {text: 'Internal Ping Scan', link: 'Discovery_NetworkServiceScanning_PingByPython'},
                 {text: 'Internal Port Scan', link: 'Discovery_NetworkServiceScanning_PortScanByPython'},
-                {text: 'Port Scan & Service Detection', link: 'Discovery_NetworkServiceScanning_PortScanWithServiceByPython'},
+                {text: 'Internal Port Scan & Service Detection', link: 'Discovery_NetworkServiceScanning_PortScanWithServiceByPython'},
+                {text: 'Internal Port Scan (Kit)', link: 'Discovery_NetworkServiceScanning_PortScanByPythonKit'},
+                {text: 'Internal Port Scan & Service Detection (Kit)', link: 'Discovery_NetworkServiceScanning_PortScanWithServiceByPythonKit'},
                 {text: 'Enumerate Network Shares (Windows)', link: 'Discovery_NetworkShareDiscovery_PowerView'},
                 {text: 'Enumerate Permission Groups (Windows)', link: 'Discovery_PermissionGroupsDiscovery_PowerView'},
                 {text: 'List .NET Framework Versions', link: 'Discovery_QueryRegistry_GetDotNetVersions'},
@@ -326,49 +378,24 @@ function sidebarReference(): DefaultTheme.SidebarItem[] {
                 {text: 'Split Archive via 7z', link: 'Collection_ArchiveCollectedData_ArchiveViaCustomMethod_7z'},
             ]
         },
-        {
-            text: 'Internet Scanning',
-            collapsed: false,
-            items: [
-                {text: 'GitLab ExifTool RCE', link: 'Bot_MSF_Exp_GitlabExifRce'},
-                {text: 'SSH Brute Force', link: 'Bot_MSF_Exp_SSHBruteForce'},
-                {text: 'vBulletin Widget Template RCE', link: 'Bot_MSF_Exp_VbulletinWidgetTemplateRce'},
-                {text: 'VMware Horizon Log4j RCE', link: 'Bot_Python_Poc_Log4j2_VMwareHorizon'},
-            ]
-        },
-        {
-            text: 'Passive Scanning',
-            collapsed: false,
-            items: [
-                {text: 'Log4j2 CVE-2021-44228 Scan', link: 'HttpProxyScan_Log4J2'},
-            ]
-        },
-        {
-            text: 'AI Agents',
-            collapsed: false,
-            items: [
-                {text: 'Phishing Email Generator/Sender', link: 'AI_Agent_Phishing_LangGraph_Mail'},
-                {text: 'Reconnaissance Agent', link: 'AI_Agent_Session_LangGraph_Discovery'},
-                {text: 'Viper Operations Agent', link: 'AI_Agent_Session_LangGraph_ViperOperation'},
-            ]
-        },
-        {
-            text: 'Attack Surface Management',
-            collapsed: false,
-            items: [
-                {text: 'Automated Recon (by Company Name)', link: 'Web_Auto_CollectByCompanyName'},
-                {text: 'Aiqicha Keyword Search', link: 'Web_Company_AiqichaSearchByKeyword'},
-                {text: 'Aiqicha ICP/WeChat/App Search', link: 'Web_Company_AiqichaSearchICPWechatAPP'},
-                {text: 'CDN Detection', link: 'Web_CyberSecurity_CDNCheck'},
-                {text: 'Nuclei Scanner', link: 'Web_CyberSecurity_Nuclei'},
-                {text: 'WAF Detection (wafw00f)', link: 'Web_CyberSecurity_Wafw00f'},
-                {text: 'WAF Detection (Current Project)', link: 'Web_CyberSecurity_Wafw00f_by_project'},
-                {text: '360 Quake Subdomain Enumeration', link: 'Web_Network_360QuakeSearchByDomain'},
-                {text: '360 Quake Port Scan', link: 'Web_Network_360QuakeSearchByIP'},
-                {text: '360 Quake SPL Query', link: 'Web_Network_360QuakeSearchBySPL'},
-                {text: 'Nmap Port Scanning', link: 'Web_Network_nmap'},
-            ]
-        }
+        // {
+        //     text: 'Internet Scanning',
+        //     collapsed: false,
+        //     items: [
+        //         {text: 'GitLab ExifTool RCE', link: 'Bot_MSF_Exp_GitlabExifRce'},
+        //         {text: 'SSH Brute Force', link: 'Bot_MSF_Exp_SSHBruteForce'},
+        //         {text: 'vBulletin Widget Template RCE', link: 'Bot_MSF_Exp_VbulletinWidgetTemplateRce'},
+        //         {text: 'VMware Horizon Log4j RCE', link: 'Bot_Python_Poc_Log4j2_VMwareHorizon'},
+        //     ]
+        // },
+        // {
+        //     text: 'Passive Scanning',
+        //     collapsed: false,
+        //     items: [
+        //         {text: 'Log4j2 CVE-2021-44228 Scan', link: 'HttpProxyScan_Log4J2'},
+        //     ]
+        // },
+
     ]
 }
 
@@ -381,7 +408,6 @@ function sidebarTraining(): DefaultTheme.SidebarItem[] {
                 {text: 'Get Permission', link: 'first_session'},
                 {text: 'Information Collection', link: 'information_collection'},
                 {text: 'Lateral Movement', link: 'lateral_movement'},
-                {text: 'Information Collection (Internet)', link: 'Information_collection_Internet'},
             ]
         },
         {
@@ -398,33 +424,37 @@ function sidebarTraining(): DefaultTheme.SidebarItem[] {
                 {text: 'Use VIPER to Scan Log4j Vulnerabilities', link: 'Use_Viper_to_scan_log4j_vulnerabilities'},
                 {text: 'Behinder and Viper Collaboration', link: 'Behinder_and_Viper_collaborate'},
                 {text: 'cthun3 and Viper Collaboration', link: 'cthun3_and_viper_collaborate'},
+                {text: 'Manual Load stdapi Plugin', link: 'manual_load_stdapi/'},
+                {text: 'Claude Plugin', link: 'use_viper_with_skills/'},
             ]
-        }
+        },
+        {
+            text: 'Blog',
+            collapsed: false,
+            items: [
+                {
+                    text: 'Viper Open Source Graphical Intranet Penetration Tool Installation and Beginner Guide',
+                    link: 'viper_open_source_graphical_intrAnet_penetration_tool_installation_and_beginner_guide'
+                },
+                {text: 'Viper Semi-automated Intranet Information Gathering', link: 'viper_semi_automated_intranet_information_gathering'},
+                {text: 'Invisible Wings: MSF Using DNS Tunnel for Online', link: 'invisible_wings_msf_using_dns_tunnel_for_online'},
+                {text: 'MSF Execute Assembly and CobaltStrike Execute Assembly', link: 'msfexecute_assembly_and_cobaltstrikeexecute_assembly'},
+                {text: 'MSF Sleep and CobaltStrike Sleep', link: 'msfsleep_and_cobaltstrikesleep'},
+                {text: 'New Ideas for Building Intranet Tunnels Without Internet', link: 'no_internet_intranet_tunnel_construction_new_ideas'},
+                {text: 'Two Ways of Automated Process Injection', link: 'two_ways_of_automated_process_injection'},
+                {text: 'Simple Zero-cost Way to Hide C2 Server Using Heroku', link: 'utilize_heroku_to_hide_c2_server_simple_zero_cost'},
+                {text: 'How to Efficiently Use Cloud Functions in MSF', link: 'how_to_use_cloud_functions_efficiently_in_msf'},
+                {text: 'How to Make MSF Meterpreter as Stable as CS Beacon', link: 'how_to_transform_msf_meterpreter_as_stable_as_cs_beacon'},
+                {text: 'FRP and Cloud Functions for Intranet Penetration', link: 'frp_and_cloud_functions_for_intranet_penetration'},
+                {text: 'Building Log4j Passive Scanner from Scratch', link: 'build_log4j_passive_scanner_from_scratch'},
+                {text: 'Offensive Cybersecurity Intelligent Agent', link: 'offensive_cybersecurity_intelligent_agent'},
+                {text: 'Intelligent Epoch: AI Large Model Driven Red Team Attack Techniques', link: 'intelligent_epoch_ai_large_model_driven_red_team_attack_techniques'},
+                {text: 'Intelligent Epoch: AI Large Model Driven Red Team Attack Techniques II', link: 'intelligent_epoch_ai_large_model_driven_red_team_attack_techniques_ii'},
+            ]
+        },
     ]
 }
 
-function sidebarBlog(): DefaultTheme.SidebarItem[] {
-    return [
-        {
-            text: 'Viper Open Source Graphical Intranet Penetration Tool Installation and Beginner Guide',
-            link: 'viper_open_source_graphical_intrAnet_penetration_tool_installation_and_beginner_guide'
-        },
-        {text: 'Viper Semi-automated Intranet Information Gathering', link: 'viper_semi_automated_intranet_information_gathering'},
-        {text: 'Invisible Wings: MSF Using DNS Tunnel for Online', link: 'invisible_wings_msf_using_dns_tunnel_for_online'},
-        {text: 'MSF Execute Assembly and CobaltStrike Execute Assembly', link: 'msfexecute_assembly_and_cobaltstrikeexecute_assembly'},
-        {text: 'MSF Sleep and CobaltStrike Sleep', link: 'msfsleep_and_cobaltstrikesleep'},
-        {text: 'New Ideas for Building Intranet Tunnels Without Internet', link: 'no_internet_intranet_tunnel_construction_new_ideas'},
-        {text: 'Two Ways of Automated Process Injection', link: 'two_ways_of_automated_process_injection'},
-        {text: 'Simple Zero-cost Way to Hide C2 Server Using Heroku', link: 'utilize_heroku_to_hide_c2_server_simple_zero_cost'},
-        {text: 'How to Efficiently Use Cloud Functions in MSF', link: 'how_to_use_cloud_functions_efficiently_in_msf'},
-        {text: 'How to Make MSF Meterpreter as Stable as CS Beacon', link: 'how_to_transform_msf_meterpreter_as_stable_as_cs_beacon'},
-        {text: 'FRP and Cloud Functions for Intranet Penetration', link: 'frp_and_cloud_functions_for_intranet_penetration'},
-        {text: 'Building Log4j Passive Scanner from Scratch', link: 'build_log4j_passive_scanner_from_scratch'},
-        {text: 'Offensive Cybersecurity Intelligent Agent', link: 'offensive_cybersecurity_intelligent_agent'},
-        {text: 'Intelligent Epoch: AI Large Model Driven Red Team Attack Techniques', link: 'intelligent_epoch_ai_large_model_driven_red_team_attack_techniques'},
-        {text: 'Intelligent Epoch: AI Large Model Driven Red Team Attack Techniques II', link: 'intelligent_epoch_ai_large_model_driven_red_team_attack_techniques_ii'},
-    ]
-}
 
 function sidebarPolicies(): DefaultTheme.SidebarItem[] {
     return [

@@ -1,11 +1,11 @@
-# Execute Custom Powershell Scripts
+# Execute Custom PowerShell Scripts
 
-## Main Functions
-Execute custom Powershell scripts in memory. The Powershell scripts only support the API of Powershell 2.0.
+Execute custom PowerShell scripts in memory. PowerShell scripts only support PowerShell 2.0 API.
 
-The scripts to be executed can be uploaded to the server through `File Explorer`.
+The scripts to be executed can be uploaded to the server through the `File Explorer`
 
-## Operation Methods
-![](img\DefenseEvasion_ProcessInjection_PowershellRunInMem\1.webp)
+## Operation Method
 
-![](img\DefenseEvasion_ProcessInjection_PowershellRunInMem\2.webp)
+![](img/DefenseEvasion_ProcessInjection_PowershellRunInMem/1.webp)
+
+![](img/DefenseEvasion_ProcessInjection_PowershellRunInMem/2.webp)

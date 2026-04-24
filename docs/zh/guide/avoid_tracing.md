@@ -11,7 +11,6 @@
 + 防守方无法人工确认VPS是否安装了VIPER
 + 威胁情报平台无法识别VIPER标签
 
-
 ## 添加反溯源
 
 + **安装Viper并启动**
@@ -20,17 +19,14 @@
 
 ```shell
 cd /root/VIPER/nginxconfig    # /root/VIPER为viper安装目录
-
-chmod 755 nobody.sh
-
-./nobody.sh                  # 按照提示运行,牢记密码
+sh nobody.sh                  # 按照提示运行,牢记密码
 ```
 
 + 访问 [https://yourvpsip:newport](https://vpsip:60000/#/user/login) 登录.
-+ 用户名: root 密码:自定义密码
++ 出现认证弹框,用户名: root 密码:上一步设置的页面认证密码
++ 通过认证后,出现VIPER登录界面,输入用户名: root 密码: Viper登录密码
 
 > 页面认证密码和登录VIPER的密码相互独立,可以相同也可以不同
-
 
 ## 清除反溯源
 
@@ -38,8 +34,5 @@ chmod 755 nobody.sh
 
 ```shell
 cd /root/VIPER/nginxconfig    # /root/VIPER为viper安装目录
-
-chmod 755 nobody.sh
-
-./nobody.sh                  # 按照提示直接回车
+sh nobody.sh                  # 按照提示直接回车
 ```

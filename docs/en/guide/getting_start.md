@@ -1,16 +1,23 @@
 # Quick Start
 
 ## Performance Requirements
-- The minimum performance requires 2U4G.
-- Supported OS versions:
-  - Ubuntu 22.04 and above.
-  - Kali Linux 2024.4 and above.
-  - Debian 11 and above.
-  - CentOS is not recommended.
+
++ 2G free memory
++ 5G hard disk space
++ Linux kernel 5.X and above (Ubuntu 22.04/kali Linux 2024.4/Debian 11)
+
+## Automatic Installation (Recommended)
+
+```shell
+bash <(curl -fsSL https://viperrtp.com/install.sh)
+```
+
+> Get familiar with Viper's related features through [Try Viper](./try_viper).
 
 ## Manual Installation
-- **Prepare a VPS with a Linux system.**
+
 - **Switch to the root user.**
+
 ```shell
 su root
 ```
@@ -90,13 +97,14 @@ services:
     command: ["VIPER_PASSWORD"]
 EOF
 ```
+
 - **Set the login password**
 
 ```shell
 export VIPER_PASSWORD=yourpassword
 ```
-> **Replace yourpassword with a custom password.**
 
+> **Replace yourpassword with a custom password.**
 
 - **Write the password to docker-compose.yml**
 
@@ -112,16 +120,15 @@ cd $VIPER_DIR
 docker compose up -d
 ```
 
-- Wait for 1min the system to ready, then visit [https://your-vps-ip:60000](https://vpsip:60000/#/user/login) to log in. 
+- Wait for 1min the system to ready, then visit [https://your-vps-ip:60000](https://vpsip:60000/#/user/login) to log in.
 - Username: **root**   Password: **Custom password**
-
 
 > All docker compose commands must be executed in the installation directory to take effect.
 >
 > When deploying Viper using a VPS, please confirm that the firewall of the VPS has port 60000 and subsequent ports required for handler open.
 >
-> When using VIPER in a red team, it is recommended to configure [Anti Tracing](./avoid_tracing).
-> 
-> You can familiarize yourself with the relevant functions of Viper through [Get Started](./try_viper).
+> Configure [anti-tracing](./avoid_tracing) to avoid being flagged by threat intelligence platforms.
+>
+> Get familiar with Viper's related features through [Try Viper](./try_viper).
 >
 > For Mac installation, refer to [issues](./issues).
